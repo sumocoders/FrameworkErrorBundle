@@ -1,0 +1,22 @@
+{
+  "name": "sumocoders/framework-error-bundle",
+  "type": "symfony-bundle",
+  "description": "Error bundle for our mini-framework",
+  "keywords": ["Errbit", "SumoCoders"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tijs Verkoyen",
+      "email": "tijs@sumocoders.be"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.3.3",
+    "symfony/framework-bundle": "~2.1"
+  },
+  "autoload": {
+    "psr-0": { "SumoCoders\\FrameworkErrorBundle": "" }
+  },
+  "target-dir": "SumoCoders/FrameworkErrorBundle"
+}
