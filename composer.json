@@ -11,10 +11,16 @@
     }
   ],
   "minimum-stability": "dev",
+  "repositories": [
+    {
+      "type":"vcs",
+      "url":"git@git.sumocoders.be:tijs/frameworkcorebundle.git"
+    }
+  ],
   "require": {
     "php": ">=5.3.3",
-    "symfony/framework-bundle": "~2.1",
-    "redexperts/errbit-bundle": "dev-master"
+    "redexperts/errbit-bundle": "dev-master",
+    "sumocoders/framework-core-bundle": "dev-master"
   },
   "autoload": {
     "psr-0": { "SumoCoders\\FrameworkErrorBundle": "" }
