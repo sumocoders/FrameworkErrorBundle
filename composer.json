@@ -13,8 +13,7 @@
   "minimum-stability": "dev",
   "require": {
     "php": ">=5.3.3",
-    "redexperts/errbit-bundle": "dev-master",
-    "sumocoders/framework-core-bundle": "dev-master"
+    "redexperts/errbit-bundle": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "4.1.*"
