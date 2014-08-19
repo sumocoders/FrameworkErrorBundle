@@ -1,6 +1,6 @@
 # SumoCoders FrameworkErrorBundle
 
-[![Build Status](https://travis-ci.org/sumocoders/FrameworkErrorBundle.svg)](https://travis-ci.org/sumocoders/FrameworkErrorBundle)
+[![Build Status](https://travis-ci.org/sumocoders/FrameworkErrorBundle.svg)](https://travis-ci.org/sumocoders/FrameworkErrorBundle) [![Code Climate](https://codeclimate.com/github/sumocoders/FrameworkErrorBundle/badges/gpa.svg)](https://codeclimate.com/github/sumocoders/FrameworkErrorBundle)
 
 The FrameworkErrorBundle will add some functionality related to errors. Below
 all functionality is listed:
