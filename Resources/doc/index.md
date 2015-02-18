@@ -28,6 +28,7 @@ public function registerBundles()
 {
     // ...
     if (in_array($this->getEnvironment(), array('prod'))) {
+        $bundles[] = new Redexperts\ErrbitBundle\RedexpertsErrbitBundle();
         $bundles[] = new SumoCoders\FrameworkErrorBundle\SumoCodersFrameworkErrorBundle();
     }
 }
