@@ -1,0 +1,7 @@
+redexperts_errbit:
+  errbit:
+    errbit_enable_log: true
+    api_key: "%errbit_api_key%"
+    host: errors.sumocoders.be
+    port: 443
+    environment_name: prod
