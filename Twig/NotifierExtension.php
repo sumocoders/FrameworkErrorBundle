@@ -32,58 +32,10 @@ class NotifierExtension extends \Twig_Extension
      * @param string             $host
      * @param string             $apiKey
      */
-    public function __construct($container, $host, $apiKey)
-    {
-        $this->setContainer($container);
-        $this->setHost($host);
-        $this->setApiKey($apiKey);
-    }
-
-    /**
-     * @return ContainerInterface
-     */
-    public function getContainer()
-    {
-        return $this->container;
-    }
-
-    /**
-     * @param ContainerInterface $container
-     */
-    public function setContainer($container)
+    public function __construct(ContainerInterface $container, $host, $apiKey)
     {
         $this->container = $container;
-    }
-
-    /**
-     * @return string
-     */
-    public function getHost()
-    {
-        return $this->host;
-    }
-
-    /**
-     * @param string $host
-     */
-    public function setHost($host)
-    {
         $this->host = $host;
-    }
-
-    /**
-     * @return string
-     */
-    public function getApiKey()
-    {
-        return $this->apiKey;
-    }
-
-    /**
-     * @param string $apiKey
-     */
-    public function setApiKey($apiKey)
-    {
         $this->apiKey = $apiKey;
     }
 
@@ -110,11 +62,11 @@ class NotifierExtension extends \Twig_Extension
      */
     public function getErrbitNotifier()
     {
-        return $this->getContainer()->get('templating')->render(
+        return $this->container->get('templating')->render(
             'SumoCodersFrameworkErrorBundle:Extension:notifier.html.twig',
             array(
-                'host' => $this->getHost(),
-                'api_key' => $this->getApiKey()
+                'host' => $this->host,
+                'api_key' => $this->apiKey,
             )
         );
     }

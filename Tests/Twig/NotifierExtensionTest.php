@@ -51,27 +51,6 @@ class NotifierExtensionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test the getters/setters
-     */
-    public function testGettersAndSetters()
-    {
-        $data = array(
-            'api_key' => 'this.is.my.api.key',
-            'host' => 'example.org',
-            'container' => $this->getContainer(),
-        );
-
-        $this->extension->setApiKey($data['api_key']);
-        $this->assertEquals($data['api_key'], $this->extension->getApiKey());
-
-        $this->extension->setHost($data['host']);
-        $this->assertEquals($data['host'], $this->extension->getHost());
-
-        $this->extension->setContainer($data['container']);
-        $this->assertEquals($data['container'], $this->extension->getContainer());
-    }
-
-    /**
      * Tests NotifierExtension::getFunctions()
      */
     public function testGetFunctions()

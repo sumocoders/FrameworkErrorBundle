@@ -34,7 +34,7 @@ public function registerBundles()
 }
 ```
 
-Add the custom exception controler into `app/config/config_prod.yml`
+Add the custom exception controller into `app/config/config_prod.yml`
 
 ```yaml
 # Set our own exception controller so we can show nice pages
