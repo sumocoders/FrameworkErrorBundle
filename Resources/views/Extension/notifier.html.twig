@@ -1,0 +1,19 @@
+{% if app.environment == 'prod' %}
+    <script type="text/javascript">
+        (function() {
+            document.write(unescape("%3Cscript src='https://{{ host }}/javascripts/notifier.js' type='text/javascript'%3E%3C/script%3E"));
+        })();
+    </script>
+    <script type="text/javascript">
+        window.Airbrake = (typeof(Airbrake) == 'undefined' && typeof(Hoptoad) != 'undefined') ? Hoptoad : Airbrake;
+        Airbrake.setKey('{{ api_key }}');
+        Airbrake.setHost('{{ host }}');
+        Airbrake.setEnvironment('{{ app.environment }}');
+        Airbrake.setErrorDefaults({
+            url:                   document.URL,
+            controller:            "{{ app.request.get('_controller') }}",
+            route:                 "{{ app.request.get('_route') }}",
+            {% if app.user %}user: "{{ app.user.username }}"{% endif %}
+        });
+    </script>
+{% endif %}
