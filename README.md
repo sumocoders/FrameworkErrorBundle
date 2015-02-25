@@ -6,6 +6,7 @@ The FrameworkErrorBundle will add some functionality related to errors. Below
 all functionality is listed:
 
 * Overrules the default error pages with some nicely styled ones
+* Integrates Errbit (JS and PHP errors)
 
 ## Documentation
 

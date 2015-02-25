@@ -1,7 +1,13 @@
-redexperts_errbit:
-  errbit:
-    errbit_enable_log: true
-    api_key: "%errbit_api_key%"
-    host: errors.sumocoders.be
-    port: 443
-    environment_name: production
+eo_airbrake:
+  api_key: "%errbit_api_key%"
+  host: errors.sumocoders.be
+
+services:
+  sumocoders_framework_error_bundle.twig.notifier_extension:
+    class: SumoCoders\FrameworkErrorBundle\Twig\NotifierExtension
+    tags:
+      - { name: twig.extension }
+    arguments:
+      - @service_container
+      - %eo_airbrake.host%
+      - %eo_airbrake.api_key%
