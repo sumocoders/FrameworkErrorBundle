@@ -17,8 +17,7 @@ Add FrameworkErrorBundle as a requirement in your composer.json:
 
 Run `composer update`:
 
-Enable the bundle in the kernel, just add it in production mode, as this bundle
-is intended to handle errors so our visitors don't freak out
+Enable the bundle in the kernel.
 
 ```php
 <?php
@@ -27,9 +26,19 @@ is intended to handle errors so our visitors don't freak out
 public function registerBundles()
 {
     // ...
-    if (in_array($this->getEnvironment(), array('prod'))) {
-        $bundles[] = new Redexperts\ErrbitBundle\RedexpertsErrbitBundle();
-        $bundles[] = new SumoCoders\FrameworkErrorBundle\SumoCodersFrameworkErrorBundle();
-    }
+    $bundles = array(
+        // ...
+        new Eo\AirbrakeBundle\EoAirbrakeBundle(),
+        new SumoCoders\FrameworkErrorBundle\SumoCodersFrameworkErrorBundle(),
+    );
 }
 ```
+
+Add the custom exception controler into `app/config/config_prod.yml`
+
+```yaml
+# Set our own exception controller so we can show nice pages
+twig:
+    exception_controller: SumoCodersFrameworkErrorBundle:Exception:showException
+```
+Fill in the `errbit_api_key` in your `parameters.yml`.
