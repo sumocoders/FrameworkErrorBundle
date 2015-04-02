@@ -20,7 +20,7 @@ class ExceptionController extends Controller
         );
 
         return $this->render(
-            'SumoCodersFrameworkErrorBundle:Exception:error.html.twig',
+            '::error.html.twig',
             $data
         );
     }
