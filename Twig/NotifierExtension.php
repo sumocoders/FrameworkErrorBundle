@@ -3,7 +3,6 @@
 namespace SumoCoders\FrameworkErrorBundle\Twig;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\Templating;
 
 /**
  * NotifierExtension
