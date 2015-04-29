@@ -2,17 +2,15 @@
 
 namespace SumoCoders\FrameworkErrorBundle\Twig;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
-
 /**
  * NotifierExtension
  */
 class NotifierExtension extends \Twig_Extension
 {
     /**
-     * @var ContainerInterface
+     * @var \Twig_Environment
      */
-    protected $container;
+    protected $twig;
 
     /**
      * @var string
@@ -27,13 +25,13 @@ class NotifierExtension extends \Twig_Extension
     /**
      * Class constructor
      *
-     * @param ContainerInterface $container
-     * @param string             $host
-     * @param string             $apiKey
+     * @param \Twig_Environment $twig
+     * @param string            $host
+     * @param string            $apiKey
      */
-    public function __construct(ContainerInterface $container, $host, $apiKey)
+    public function __construct(\Twig_Environment $twig, $host, $apiKey)
     {
-        $this->container = $container;
+        $this->twig = $twig;
         $this->host = $host;
         $this->apiKey = $apiKey;
     }
@@ -61,7 +59,7 @@ class NotifierExtension extends \Twig_Extension
      */
     public function getErrbitNotifier()
     {
-        return $this->container->get('templating')->render(
+        return $this->twig->render(
             'SumoCodersFrameworkErrorBundle:Extension:notifier.html.twig',
             array(
                 'host' => $this->host,

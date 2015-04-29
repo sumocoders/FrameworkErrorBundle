@@ -8,6 +8,6 @@ services:
     tags:
       - { name: twig.extension }
     arguments:
-      - @service_container
+      - @twig
       - %eo_airbrake.host%
       - %eo_airbrake.api_key%

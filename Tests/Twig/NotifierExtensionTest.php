@@ -15,7 +15,7 @@ class NotifierExtensionTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->extension = new NotifierExtension(
-            $this->getContainer(),
+            $this->getTemplating(),
             'host',
             'api_key'
         );
@@ -24,27 +24,9 @@ class NotifierExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * @return \PHPUnit_Framework_MockObject_MockObject
      */
-    protected function getContainer()
-    {
-        $container = $this->getMock('\Symfony\Component\DependencyInjection\ContainerInterface');
-        $container->method('get')
-            ->will(
-                $this->returnValue(
-                    array(
-                        'template' => $this->getTemplating(),
-                    )
-                )
-            );
-
-        return $container;
-    }
-
-    /**
-     * @return \PHPUnit_Framework_MockObject_MockObject
-     */
     public function getTemplating()
     {
-        $templating = $this->getMock('Symfony\Component\Templating\EngineInterface');
+        $templating = $this->getMock('\Twig_Environment');
         $templating->method('render');
 
         return $templating;
