@@ -4,7 +4,7 @@ eo_airbrake:
 
 sumo_coders_framework_error:
   show_messages_for:
-    - \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+    - Symfony\Component\HttpKernel\Exception\NotFoundHttpException
 
 services:
   sumocoders_framework_error_bundle.twig.notifier_extension:

@@ -42,9 +42,9 @@ class NotifierExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'errbit_notifier' => new \Twig_Function_Method(
-                $this,
-                'getErrbitNotifier',
+            new \Twig_SimpleFunction(
+                'errbit_notifier',
+                array($this, 'getErrbitNotifier'),
                 array(
                     'is_safe' => array('html'),
                 )

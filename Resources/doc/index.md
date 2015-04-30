@@ -56,7 +56,7 @@ By default a generic message will be shown. But if you want you can change this
 # Allow some exceptions to expose their message
 sumo_coders_framework_error:
   show_messages_for:
-    - \Your\Own\Exception
+    - Your\Own\Exception
 ```
 
 Once this is configured the message will be grabbed through `getMessage()` on 

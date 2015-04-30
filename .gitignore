@@ -5,4 +5,3 @@
 /vendor/
 composer.lock
 coverage.xml
-coverage.clover

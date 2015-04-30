@@ -27,7 +27,7 @@ class ExceptionController extends Controller
 
         // check if the error is whitelisted to overrule the message
         if (in_array(
-            '\\' . $exception->getClass(),
+            $exception->getClass(),
             $this->container->getParameter('sumo_coders_framework_error.show_messages_for')
         )) {
             $message = $exception->getMessage();
@@ -42,7 +42,7 @@ class ExceptionController extends Controller
             '::error.html.twig',
             array(
                 'status_code' => $exception->getStatusCode(),
-                'status_text' => $message
+                'status_text' => $message,
             )
         );
     }

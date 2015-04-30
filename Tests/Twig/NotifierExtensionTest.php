@@ -40,10 +40,9 @@ class NotifierExtensionTest extends \PHPUnit_Framework_TestCase
         $var = $this->extension->getFunctions();
 
         $this->assertInternalType('array', $var);
-        $this->assertArrayHasKey('errbit_notifier', $var);
         $this->assertInstanceOf(
-            '\Twig_Function_Method',
-            $var['errbit_notifier']
+            '\Twig_SimpleFunction',
+            $var[0]
         );
     }
 
