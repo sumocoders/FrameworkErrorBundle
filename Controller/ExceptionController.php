@@ -9,6 +9,12 @@ use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
 
 class ExceptionController extends Controller
 {
+    /**
+     * @param Request              $request
+     * @param FlattenException     $exception
+     * @param DebugLoggerInterface $logger
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function showExceptionAction(
         Request $request,
         FlattenException $exception,
