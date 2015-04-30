@@ -20,14 +20,17 @@ class ExceptionController extends Controller
         FlattenException $exception,
         DebugLoggerInterface $logger = null
     ) {
-        $data = array(
-            'status_code' => $exception->getStatusCode(),
-            'status_text' => $exception->getMessage(),
-        );
+        $message = 'Something went wrong.';
+        if ('Symfony\Component\HttpKernel\Exception\NotFoundHttpException' == $exception->getClass()) {
+            $message = $exception->getMessage();
+        }
 
         return $this->render(
             '::error.html.twig',
-            $data
+            array(
+                'status_code' => $exception->getStatusCode(),
+                'status_text' => $message
+            )
         );
     }
 }
