@@ -24,6 +24,16 @@ class ExceptionController extends Controller
         /** @var Translator $translator */
         $translator = $this->get('translator');
         $message = $translator->trans('error.messages.generic');
+
+        // check if the error is whitelisted to overrule the message
+        if (in_array(
+            '\\' . $exception->getClass(),
+            $this->container->getParameter('sumo_coders_framework_error.show_messages_for')
+        )) {
+            $message = $exception->getMessage();
+        }
+
+        // translate page not found messages
         if ('Symfony\Component\HttpKernel\Exception\NotFoundHttpException' == $exception->getClass()) {
             $message = $translator->trans('error.messages.noRouteFound');
         }
