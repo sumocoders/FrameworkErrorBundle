@@ -3,6 +3,7 @@
 namespace SumoCoders\FrameworkErrorBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Translation\Translator;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\FlattenException;
 use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
@@ -20,9 +21,11 @@ class ExceptionController extends Controller
         FlattenException $exception,
         DebugLoggerInterface $logger = null
     ) {
-        $message = 'Something went wrong.';
+        /** @var Translator $translator */
+        $translator = $this->get('translator');
+        $message = $translator->trans('error.messages.generic');
         if ('Symfony\Component\HttpKernel\Exception\NotFoundHttpException' == $exception->getClass()) {
-            $message = $exception->getMessage();
+            $message = $translator->trans('error.messages.noRouteFound');
         }
 
         return $this->render(

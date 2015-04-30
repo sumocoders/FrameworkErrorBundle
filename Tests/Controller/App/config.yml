@@ -20,6 +20,7 @@ framework:
     engines: ['twig']
   session:
       storage_id: session.storage.filesystem
+  translator: { fallback: "en" }
 
 monolog:
   handlers:

@@ -12,7 +12,7 @@ class DefaultControllerTest extends WebTestCase
         $client = static::createClient();
         $crawler = $client->request('GET', '/non-existing-path');
 
-        $this->assertErrorPage($client, $crawler, 404, 'No route found for "GET /non-existing-path"');
+        $this->assertErrorPage($client, $crawler, 404, 'Page not found.');
     }
 
     public function testStandardException()
