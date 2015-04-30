@@ -1,0 +1,35 @@
+parameters:
+  errbit_api_key: 'foobar'
+
+imports:
+  - { resource: @SumoCodersFrameworkErrorBundle/Resources/config/config.yml }
+
+twig:
+  exception_controller: SumoCodersFrameworkErrorBundle:Exception:showException
+
+framework:
+  secret:          secret
+  test: ~
+  router:
+    resource: "%kernel.root_dir%/routing.yml"
+  form:            true
+  csrf_protection: true
+  validation:
+    enable_annotations: true
+  templating:
+    engines: ['twig']
+  session:
+      storage_id: session.storage.filesystem
+
+monolog:
+  handlers:
+    main:
+      type:         fingers_crossed
+      action_level: error
+      handler:      nested
+    nested:
+      type:  stream
+      path:  %kernel.logs_dir%/%kernel.environment%.log
+      level: debug
+
+

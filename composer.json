@@ -17,6 +17,10 @@
     "eo/airbrake-bundle": "~1.0@dev"
   },
   "require-dev": {
+    "symfony/symfony": "2.6.*",
+    "symfony/framework-bundle": "~2.6",
+    "symfony/monolog-bundle": "~2.6",
+    "sensio/framework-extra-bundle": "~3.0",
     "phpunit/phpunit": "4.*"
   },
   "autoload": {

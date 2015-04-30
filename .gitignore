@@ -1,3 +1,7 @@
+/Tests/Controller/App/cache/*
+!/Tests/Controller/App/cache/.gitkeep
+/Tests/Controller/App/logs/*
+!/Tests/Controller/App/logs/.gitkeep
 /vendor/
 composer.lock
 coverage.xml

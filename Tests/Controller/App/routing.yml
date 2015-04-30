@@ -1,0 +1,3 @@
+standard_exception:
+  path: exception/standard
+  defaults: { _controller: SumoCodersFrameworkErrorBundle:Test:standardException }
