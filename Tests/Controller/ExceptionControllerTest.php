@@ -12,7 +12,7 @@ class DefaultControllerTest extends WebTestCase
         $client = static::createClient();
         $crawler = $client->request('GET', '/non-existing-path');
 
-        $this->assertErrorPage($client, $crawler, 404, 'No route found for "GET /non-existing-path"');
+        $this->assertErrorPage($client, $crawler, 404, 'Page not found.');
     }
 
     public function testStandardException()
@@ -20,7 +20,7 @@ class DefaultControllerTest extends WebTestCase
         $client = static::createClient();
         $crawler = $client->request('GET', '/exception/standard');
 
-        $this->assertErrorPage($client, $crawler, 500, 'This is a standard exception.');
+        $this->assertErrorPage($client, $crawler, 500);
     }
 
     /**
@@ -35,7 +35,7 @@ class DefaultControllerTest extends WebTestCase
         Client $client,
         Crawler $crawler,
         $code,
-        $message
+        $message = 'Something went wrong.'
     ) {
         // check if the code is set correctly
         $this->assertEquals($code, $client->getResponse()->getStatusCode());

@@ -1,5 +1,8 @@
 # Getting Started With FrameworkErrorBundle
 
+The FrameworkErrorBundle will show a nicely styled error-page when an exception
+occurs and send the real exception to Errbit.
+
 ## Installation
 
 Add FrameworkErrorBundle as a requirement in your composer.json:
@@ -41,4 +44,20 @@ Add the custom exception controller into `app/config/config_prod.yml`
 twig:
     exception_controller: SumoCodersFrameworkErrorBundle:Exception:showException
 ```
+
 Fill in the `errbit_api_key` in your `parameters.yml`.
+
+## Show specific messages
+
+By default a generic message will be shown. But if you want you can change this
+ for some specific exceptions by white-listing them.
+
+```yaml
+# Allow some exceptions to expose their message
+sumo_coders_framework_error:
+  show_messages_for:
+    - Your\Own\Exception
+```
+
+Once this is configured the message will be grabbed through `getMessage()` on 
+your exception.

@@ -1,0 +1,4 @@
+error:
+  messages:
+    generic: Something went wrong.
+    noRouteFound: Page not found.
