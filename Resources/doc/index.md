@@ -5,10 +5,7 @@ occurs and send the real exception to Errbit.
 
 ## Installation
 
-    composer require sumocoders/framework-error-bundle:dev-master
-
-**Warning**
-> Replace `dev-master` with a sane thing
+    composer require sumocoders/framework-error-bundle
 
 Enable the bundle in the kernel.
 
