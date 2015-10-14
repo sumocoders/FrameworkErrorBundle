@@ -5,7 +5,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Bundle\FrameworkBundle\Client;
 
-class DefaultControllerTest extends WebTestCase
+class ExceptionControllerTest extends WebTestCase
 {
     public function test404Page()
     {

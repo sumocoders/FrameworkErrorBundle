@@ -2,7 +2,6 @@
 
 namespace SumoCoders\FrameworkErrorBundle\Test\Twig\NotifierExtension;
 
-
 use SumoCoders\FrameworkErrorBundle\Twig\NotifierExtension;
 
 class NotifierExtensionTest extends \PHPUnit_Framework_TestCase
