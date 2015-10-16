@@ -15,3 +15,9 @@ services:
       - @twig
       - %eo_airbrake.host%
       - %eo_airbrake.api_key%
+  sumocoders_console_error_handler:
+    class: SumoCoders\FrameworkErrorBundle\Listener\ConsoleExceptionListener
+    tags:
+      - { name: kernel.event_listener, event: console.exception, method: onConsoleException }
+    arguments:
+      - @eo_airbrake.client
