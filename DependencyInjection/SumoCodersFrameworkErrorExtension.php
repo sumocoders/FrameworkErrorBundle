@@ -26,7 +26,11 @@ class SumoCodersFrameworkErrorExtension extends ConfigurableExtension
             $showMessagesFor
         );
 
-        if ($container->hasParameter['errbit_api_key']) {
+        if (
+            $container->hasParameter('errbit_api_key')
+            && $container->getParameter('errbit_api_key') !== null
+            && $container->getParameter('errbit_api_key') !== ''
+        ) {
             $definition = new Definition(
                 'SumoCoders\FrameworkErrorBundle\Listener\ConsoleExceptionListener',
                 array(new Reference('eo_airbrake.client'))
