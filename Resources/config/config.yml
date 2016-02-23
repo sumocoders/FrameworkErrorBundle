@@ -12,6 +12,6 @@ services:
     tags:
       - { name: twig.extension }
     arguments:
-      - @twig
+      - "@twig"
       - %eo_airbrake.host%
       - %eo_airbrake.api_key%

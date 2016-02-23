@@ -25,7 +25,9 @@ class NotifierExtensionTest extends \PHPUnit_Framework_TestCase
      */
     public function getTemplating()
     {
-        $templating = $this->getMock('\Twig_Environment');
+        $templating = $this->getMockBuilder('\Twig_Environment')
+            ->disableOriginalConstructor()
+            ->getMock();
         $templating->method('render');
 
         return $templating;

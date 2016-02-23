@@ -4,4 +4,4 @@
 !/Tests/Controller/App/logs/.gitkeep
 /vendor/
 composer.lock
-coverage.xml
+coverage.*

@@ -13,15 +13,15 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "php": ">=5.4",
-    "eo/airbrake-bundle": "~1.0@dev"
+    "eo/airbrake-bundle": "dev-master as 1.1"
   },
   "require-dev": {
-    "symfony/symfony": "2.6.*",
-    "symfony/framework-bundle": "~2.6",
-    "symfony/monolog-bundle": "~2.6",
-    "sensio/framework-extra-bundle": "~3.0",
-    "phpunit/phpunit": "4.*"
+    "symfony/symfony": "^2.8",
+    "symfony/framework-bundle": "^2.8",
+    "symfony/monolog-bundle": "^2.8",
+    "sensio/framework-extra-bundle": "^3.0",
+    "symfony/phpunit-bridge": "^3.0",
+    "phpunit/phpunit": "^5.2"
   },
   "autoload": {
     "psr-0": { "SumoCoders\\FrameworkErrorBundle": "" }

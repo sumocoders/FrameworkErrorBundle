@@ -2,7 +2,7 @@ parameters:
   errbit_api_key: 'foobar'
 
 imports:
-  - { resource: @SumoCodersFrameworkErrorBundle/Resources/config/config.yml }
+  - { resource: "@SumoCodersFrameworkErrorBundle/Resources/config/config.yml" }
 
 twig:
   exception_controller: SumoCodersFrameworkErrorBundle:Exception:showException
