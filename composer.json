@@ -13,6 +13,8 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
+    "php": "^5.5 || ^7.0",
+
     "eo/airbrake-bundle": "dev-master as 1.1"
   },
   "require-dev": {
