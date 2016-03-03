@@ -1,3 +1,7 @@
+env:
+  global:
+    - SYMFONY_DEPRECATIONS_HELPER=3
+
 language: php
 
 matrix:
