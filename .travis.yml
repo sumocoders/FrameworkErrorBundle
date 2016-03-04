@@ -1,8 +1,13 @@
+sudo: false
+
+env:
+  global:
+    - SYMFONY_DEPRECATIONS_HELPER=3
+
 language: php
 
 matrix:
   include:
-    - php: 5.4
     - php: 5.5
     - php: 5.6
     - php: 7
