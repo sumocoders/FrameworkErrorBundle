@@ -18,11 +18,11 @@
     "eo/airbrake-bundle": "dev-master as 1.1"
   },
   "require-dev": {
-    "symfony/symfony": "^2.8",
-    "symfony/framework-bundle": "^2.8",
-    "symfony/monolog-bundle": "^2.8",
+    "symfony/symfony": "^3.3",
+    "symfony/framework-bundle": "^3.3",
+    "symfony/monolog-bundle": "^3.3",
     "sensio/framework-extra-bundle": "^3.0",
-    "symfony/phpunit-bridge": "^3.0",
+    "symfony/phpunit-bridge": "^3.3",
     "phpunit/phpunit": "^5.2 || ^4.8"
   },
   "autoload": {
