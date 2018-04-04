@@ -1,6 +1,6 @@
 eo_airbrake:
   api_key: "%errbit_api_key%"
-  host: errors.sumocoders.be
+  host: "errors.sumocoders.be"
 
 sumo_coders_framework_error:
   show_messages_for:
@@ -13,5 +13,5 @@ services:
       - { name: twig.extension }
     arguments:
       - "@twig"
-      - %eo_airbrake.host%
-      - %eo_airbrake.api_key%
+      - "%eo_airbrake.host%"
+      - "%eo_airbrake.api_key%"
